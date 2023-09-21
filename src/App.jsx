@@ -1,12 +1,19 @@
-import "./styles.css"
+import "./styles.css";
 
 export default function App() {
+  const [newItem, setNewItem] = useState("");
+
   return (
     <>
       <form className="new-item-form">
         <div className="form-row">
           <label htmlFor="item">New Item</label>
-          <input type="text" id="item" />
+          <input
+            value={newItem}
+            onChange={(e) => setNewItem(e.target.value)}
+            type="text"
+            id="item"
+          />
         </div>
         <button className="btn">Add</button>
       </form>
@@ -15,14 +22,14 @@ export default function App() {
         <li>
           <label>
             <input type="checkbox" />
-            Item 1 
+            Item 1
           </label>
           <button className="btn btn-danger">Delete</button>
         </li>
         <li>
           <label>
             <input type="checkbox" />
-            Item 2 
+            Item 2
           </label>
           <button className="btn btn-danger">Delete</button>
         </li>
